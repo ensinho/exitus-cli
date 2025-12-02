@@ -1,11 +1,11 @@
-<div class="component-name-container">
+<div class="{{folderName}}-container">
   <h3 class="header-title">{{ data?.title }}</h3>
-  <div class="component-content">
+  <div class="{{folderName}}-content">
     <p class="content-text" *ngIf="data?.description">
       {{ data?.description }}
     </p>
   </div>
-  <div class="component-footer">
+  <div class="{{folderName}}-footer">
     <button mat-button color="primary" (click)="handleAction($event)">
       {{ 'COMMON.ACTION' | translate }}
     </button>

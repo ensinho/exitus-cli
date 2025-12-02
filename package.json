@@ -1,10 +1,10 @@
 {
   "name": "exitus-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A CLI tool for generating Angular components following the Exitus Component Pattern with SCSS variables and best practices.",
   "main": "dist/index.js",
   "bin": {
-    "exitus": "./dist/index.js"
+    "exitus": "dist/index.js"
   },
   "files": [
     "dist",
@@ -46,7 +46,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ensinho/exitus-cli.git"
+    "url": "git+https://github.com/ensinho/exitus-cli.git"
   },
   "bugs": {
     "url": "https://github.com/ensinho/exitus-cli/issues"

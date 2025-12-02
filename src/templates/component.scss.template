@@ -6,7 +6,7 @@
 }
 
 // ==================== CONTAINER ====================
-.component-name-container {
+.{{folderName}}-container {
   background: $background-card;
   border: 1px solid $border-color;
   border-radius: $border-radius-base;
@@ -25,7 +25,7 @@
 }
 
 // ==================== HEADER ====================
-.component-header {
+.{{folderName}}-header {
   display: flex;
   align-items: center;
   gap: $spacing-sm;
@@ -52,7 +52,7 @@
 }
 
 // ==================== CONTENT ====================
-.component-content {
+.{{folderName}}-content {
   .content-text {
     font-size: $font-size-base;
     color: $text-secondary;
@@ -67,7 +67,7 @@
 }
 
 // ==================== FOOTER ====================
-.component-footer {
+.{{folderName}}-footer {
   display: flex;
   justify-content: flex-end;
   gap: $spacing-sm;
@@ -85,11 +85,11 @@
 
 // ==================== RESPONSIVE ====================
 @media (max-width: $breakpoint-sm) {
-  .component-name-container {
+  .{{folderName}}-container {
     padding: $spacing-sm;
   }
   
-  .component-header {
+  .{{folderName}}-header {
     .header-title {
       font-size: $font-size-base;
     }
