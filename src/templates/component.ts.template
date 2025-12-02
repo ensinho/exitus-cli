@@ -1,0 +1,47 @@
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+/**
+ * ${componentName}Component
+ * 
+ * Brief description of what this component does.
+ * 
+ * FEATURES:
+ * - Feature 1
+ * - Feature 2
+ * 
+ * USAGE:
+ * <app-${componentName} 
+ *   [data]="data"
+ *   (action)="handleAction($event)">
+ * </app-${componentName}>
+ */
+@Component({
+  selector: 'app-${componentName}',
+  templateUrl: './${componentName}.component.html',
+  styleUrls: ['./${componentName}.component.scss']
+})
+export class ${componentName}Component {
+  // ==================== INPUTS ====================
+  @Input() data: any; // TODO: Type with proper interface
+  @Input() isLoading = false;
+  @Input() disabled = false;
+
+  // ==================== OUTPUTS ====================
+  @Output() action = new EventEmitter<any>();
+  @Output() delete = new EventEmitter<string>();
+
+  // ==================== LIFECYCLE ====================
+  constructor() {}
+
+  // ==================== PUBLIC METHODS ====================
+  
+  /**
+   * Handle primary action
+   */
+  handleAction(event?: Event): void {
+    if (event) {
+      event.stopPropagation();
+    }
+    this.action.emit(this.data);
+  }
+}

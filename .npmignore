@@ -1,0 +1,39 @@
+# Contents of the file: /exitus-cli/exitus-cli/.npmignore
+
+# Source TypeScript files
+src/
+tsconfig.json
+
+# Development files
+node_modules/
+.git/
+.gitignore
+.vscode/
+.idea/
+.DS_Store
+
+# Test files
+*.test.js
+*.test.ts
+*.spec.ts
+__tests__/
+coverage/
+
+# Build artifacts
+*.map
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+
+# Include these in the package
+!dist/
+!README.md
+!LICENSE
+!*.template

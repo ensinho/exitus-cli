@@ -1,0 +1,13 @@
+<div class="component-name-container">
+  <h3 class="header-title">{{ data?.title }}</h3>
+  <div class="component-content">
+    <p class="content-text" *ngIf="data?.description">
+      {{ data?.description }}
+    </p>
+  </div>
+  <div class="component-footer">
+    <button mat-button color="primary" (click)="handleAction($event)">
+      {{ 'COMMON.ACTION' | translate }}
+    </button>
+  </div>
+</div>

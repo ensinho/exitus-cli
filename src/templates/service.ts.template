@@ -1,0 +1,67 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class {{className}}Service {
+  private apiUrl = '/rest/{{apiEndpoint}}';
+
+  constructor(private httpClient: HttpClient) {}
+
+  /**
+   * Busca {{entityName}} com parâmetros de filtro
+   * @param searchParams - Parâmetros de busca
+   * @returns Observable com array de {{entityName}}
+   */
+  public search{{className}}(searchParams: any): Observable<any[]> {
+    return this.httpClient.post<any[]>(`${this.apiUrl}/search`, searchParams).pipe(
+      map(items => items.map(item => this.map{{className}}Response(item)))
+    );
+  }
+
+  /**
+   * Busca um {{entityName}} por ID
+   * @param id - ID do {{entityName}}
+   * @returns Observable com o {{entityName}}
+   */
+  public getById(id: number | string): Observable<any> {
+    return this.httpClient.get<any>(`${this.apiUrl}/${id}`).pipe(
+      map(item => this.map{{className}}Response(item))
+    );
+  }
+
+  /**
+   * Cria um novo {{entityName}}
+   * @param data - Dados do {{entityName}}
+   * @returns Observable com o {{entityName}} criado
+   */
+  public insert(data: any): Observable<any> {
+    return this.httpClient.post<any>(this.apiUrl, data).pipe(
+      map(item => this.map{{className}}Response(item))
+    );
+  }
+
+  /**
+   * Atualiza um {{entityName}} existente
+   * @param id - ID do {{entityName}}
+   * @param data - Dados atualizados
+   * @returns Observable com o {{entityName}} atualizado
+   */
+  public update(id: number | string, data: any): Observable<any> {
+    return this.httpClient.put<any>(`${this.apiUrl}/${id}`, data).pipe(
+      map(item => this.map{{className}}Response(item))
+    );
+  }
+
+  /**
+   * Remove um {{entityName}}
+   * @param id - ID do {{entityName}}
+   * @returns Observable com a resposta
+   */
+  public delete(id: number | string): Observable<void> {
+    return this.httpClient.delete<void>(`${this.apiUrl}/${id}`);
+  }
+}

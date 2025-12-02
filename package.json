@@ -1,0 +1,58 @@
+{
+  "name": "exitus-cli",
+  "version": "0.1.0",
+  "description": "A CLI tool for generating Angular components following the Exitus Component Pattern with SCSS variables and best practices.",
+  "main": "dist/index.js",
+  "bin": {
+    "exitus": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && npm run copy-templates",
+    "copy-templates": "mkdir -p dist/templates && cp src/templates/*.template dist/templates/",
+    "start": "node dist/index.js",
+    "dev": "npm run build && node dist/index.js",
+    "cli": "node dist/index.js",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "fs-extra": "^11.2.0",
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/fs-extra": "^11.0.4",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "cli",
+    "angular",
+    "component",
+    "generator",
+    "exitus",
+    "scaffold",
+    "typescript",
+    "scss",
+    "angular-cli",
+    "component-generator"
+  ],
+  "author": "Enzo Antônio Esmeraldo Freire",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ensinho/exitus-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ensinho/exitus-cli/issues"
+  },
+  "homepage": "https://github.com/ensinho/exitus-cli#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

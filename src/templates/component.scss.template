@@ -1,0 +1,97 @@
+@use '../../variables-Aluno.scss' as *;
+
+// ==================== HOST ====================
+:host {
+  display: block;
+}
+
+// ==================== CONTAINER ====================
+.component-name-container {
+  background: $background-card;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-base;
+  padding: $spacing-md;
+  transition: all $transition-base;
+  
+  &:hover {
+    box-shadow: $shadow-hover;
+    border-color: rgba($secondary-color, 0.25);
+  }
+  
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+// ==================== HEADER ====================
+.component-header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+  
+  .header-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($secondary-color, 0.1);
+    border-radius: $border-radius-base;
+    color: $secondary-color;
+  }
+  
+  .header-title {
+    font-family: $font-primary;
+    font-size: $font-size-large;
+    font-weight: 600;
+    color: $textColor;
+    margin: 0;
+  }
+}
+
+// ==================== CONTENT ====================
+.component-content {
+  .content-text {
+    font-size: $font-size-base;
+    color: $text-secondary;
+    line-height: $line-height-base;
+  }
+  
+  .loading-state {
+    display: flex;
+    justify-content: center;
+    padding: $spacing-lg;
+  }
+}
+
+// ==================== FOOTER ====================
+.component-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1px solid $border-color;
+}
+
+// ==================== STATES ====================
+.hovered {
+  .header-icon {
+    background: rgba($secondary-color, 0.15);
+  }
+}
+
+// ==================== RESPONSIVE ====================
+@media (max-width: $breakpoint-sm) {
+  .component-name-container {
+    padding: $spacing-sm;
+  }
+  
+  .component-header {
+    .header-title {
+      font-size: $font-size-base;
+    }
+  }
+}
