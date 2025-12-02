@@ -63,7 +63,9 @@ async function generateComponentFiles(
     fileName: folderName,
     // For service
     apiEndpoint: folderName.toLowerCase(),
-    entityName: className
+    entityName: className,
+    // For SCSS import path
+    scssImportPath: options.page ? '../variables-Aluno.scss' : '../../variables-Aluno.scss'
   };
 
   try {

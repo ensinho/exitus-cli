@@ -1,4 +1,4 @@
-@use '../../variables-Aluno.scss' as *;
+@use '{{scssImportPath}}' as *;
 
 // ==================== HOST ====================
 :host {
